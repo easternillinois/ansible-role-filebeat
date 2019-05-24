@@ -20,6 +20,10 @@ Controls the major version of Filebeat which is installed.
 
 Whether to create the Filebeat configuration file and handle the copying of SSL key and cert for filebeat. If you prefer to create a configuration file yourself you can set this to `false`.
 
+    filebeat_inputs_log_enabled: true
+    
+Whether to type: log for filebeat_inputs.  Default it true.
+
     filebeat_inputs:
       - type: log
         paths:

@@ -13,3 +13,6 @@
     repo: 'deb https://artifacts.elastic.co/packages/{{ filebeat_version }}/apt stable main'
     state: present
     update_cache: true
+
+- name: Install Filebeat.
+  package: name=filebeat state=present

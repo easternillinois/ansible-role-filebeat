@@ -1,11 +1,13 @@
 ---
 filebeat_version: 6.x
+
+filebeat_gpginstall_validate_certs: true
+
 filebeat_create_config: true
 
-filebeat_inputs:
-  - type: log
-    paths:
-      - "/var/log/*.log"
+filebeat_inputs_log_enabled: true
+filebeat_inputs_log_paths:
+  - "/var/log/*.log"
 
 filebeat_output_elasticsearch_enabled: false
 filebeat_output_elasticsearch_hosts:
@@ -14,6 +16,9 @@ filebeat_output_elasticsearch_hosts:
 filebeat_output_logstash_enabled: true
 filebeat_output_logstash_hosts:
   - "localhost:5044"
+
+filebeat_logstash_worker: 1
+filebeat_logstash_loadbalance: false
 
 filebeat_enable_logging: false
 filebeat_log_level: warning
