@@ -1,13 +1,4 @@
 ---
-- name: Install Prereqs.
-  package: 
-    state: latest
-    name: '{{ item }}'
-  with_items:
-    - curl
-    - libcurl
-    - nss
-    - openssl
 
 - include: setup-RedHat.yml
   when: ansible_os_family == 'RedHat'
